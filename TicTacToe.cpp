@@ -2,7 +2,7 @@
 using namespace std;
  char space[3][3] = {{'1','2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
  int row,col;
-  char token='x';
+  char token='X';
   bool draw=false;
    string name1, name2;
   void input()
@@ -33,12 +33,12 @@ using namespace std;
 void work()
 {
  int digit;
- if(token=='x')
+ if(token=='X')
  {
     cout<<name1<<" please enter: "<<endl;
     cin>>digit;
  }
- else if(token=='o')
+ else if(token=='O')
  {
     cout<<name2<<" please enter: "<<endl;
     cin>>digit;
@@ -90,15 +90,15 @@ void work()
     cout<<"wrong input !!!";
 
  }
- if(token=='x' && space[row][col]!='x' && space[row][col]!='o')
+ if(token=='X' && space[row][col]!='X' && space[row][col]!='O')
  {
-    space[row][col]='x';
-    token='o';
+    space[row][col]='X';
+    token='O';
  }
-else if(token=='o' && space[row][col]!='x' && space[row][col]!='o')
+else if(token=='O' && space[row][col]!='X' && space[row][col]!='O')
  {
-    space[row][col]='o';
-    token='x';
+    space[row][col]='O';
+    token='X';
  }
  else{
     cout<<"Invalid space choice !!!"<<endl;
@@ -123,7 +123,7 @@ bool win()
         {
             for(int j=0;j<3;j++)
             {
-                if(space[i][j]!='x' ||  space[i][j]!='o')
+                if(space[i][j]!='X' ||  space[i][j]!='O')
                 return false;
             }
         }
@@ -143,10 +143,10 @@ bool win()
         work();
         win();
     }
-    if(token=='o' && draw==false)
+    if(token=='O' && draw==false)
     cout<<name1<<" Wins !!"<<endl;
     else
-    if(token=='x' && draw==false)
+    if(token=='X' && draw==false)
     cout<<name2<<" Wins !!"<<endl;
     else
     cout<<"Its a Draw"<<endl;
